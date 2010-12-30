@@ -1,0 +1,19 @@
+{% if latest_script_list %}
+
+<ul>
+
+{% for script in latest_script_list %}
+
+<li><a href="/scripts/{{script.id}}/showsource/">
+{{script.basename}} : {{script.title}}
+</a></li>
+
+{% endfor %}
+
+</ul>
+
+{% else %}
+
+<p>No script</p>
+
+{% endif %}
