@@ -1,7 +1,23 @@
-@import url("sphinxdoc.css");
+body{
+	text-align: center;
+}
+
+#script{
+	border: 1px solid black;
+	border-bottom-left-radius: 7px 7px;
+	border-bottom-right-radius: 7px 7px;
+	border-top-left-radius: 7px 7px;
+	border-top-right-radius: 7px 7px;
+	margin: 0px auto;
+	padding: 0px 30px 30px;
+	text-align: left;
+	width: 750px;
+}
+
+
 
 .sikuli-code {
-   font-size: 1.2em; 
+   font-size: 1.0em; 
    font-family: "Osaka-mono", Monospace;
    line-height: 1.5em;
    display:table-cell;

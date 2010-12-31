@@ -4,8 +4,8 @@
 
 {% for script in latest_script_list %}
 
-<li><a href="/scripts/{{script.id}}/showsource/">
-{{script.basename}} : {{script.title}}
+<li><a href="/{{script.id}}/">
+{{script.basename}}
 </a></li>
 
 {% endfor %}

@@ -90,12 +90,13 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/Users/tomyeh/django/templates'
+    #'/Users/tomyeh/django/templates'
+    '/home/ec2-user/sikulidepot/templates'
 )
 
-STATIC_ROOT = "/Users/tomyeh/django/sikulirepo/static"
+STATIC_ROOT = "/home/ec2-user/sikulidepot/sikulirepo/static/"
 STATIC_URL = "/static/"
-STATICFILES_DIRS = ("/Users/tomyeh/django/sikulirepo/static/",)
+STATICFILES_DIRS = ("/home/ec2-user/sikulidepot/sikulirepo/static/",)
 
 INSTALLED_APPS = (
     'django.contrib.auth',

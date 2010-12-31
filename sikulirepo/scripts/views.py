@@ -52,16 +52,16 @@ from django import forms
 import datetime
 
 class UploadFileForm(forms.Form):
-	title = forms.CharField(max_length=50)
+	#title = forms.CharField(max_length=50)
 	file = forms.FileField()
 
 def handle_uploaded_file(f):
-	destination = open(f.name,'wb+')
+	destination = open('tmp/' + f.name,'wb+')
 	for chunk in f.chunks():
 		destination.write(chunk)
 	destination.close()
 
-	import_skl(f.name)
+	return import_skl('tmp/' + f.name)
 
 def save_as_pattern_image(f):
 	s = Script(title="test")
@@ -76,9 +76,10 @@ def upload_file(request):
 		form = UploadFileForm(request.POST, request.FILES)
 		if form.is_valid():
 			print request.FILES['file']
-			handle_uploaded_file(request.FILES['file'])
+			s = handle_uploaded_file(request.FILES['file'])
 			#save_as_pattern_image(request.FILES['file'])
-			return HttpResponseRedirect(reverse('scripts.views.index'))
+			#return HttpResponseRedirect(reverse('scripts.views.index'))
+			return HttpResponseRedirect("/%d" % s.id)
 	else:
 		form = UploadFileForm()
 	return render_to_response('scripts/upload.html', {'form' : form},

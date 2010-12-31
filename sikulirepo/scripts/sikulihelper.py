@@ -135,11 +135,6 @@ class Parser:
 		   self.out.write(cgi.escape(toktext))
 
 
-from sphinx.util.compat import Directive
-from docutils import nodes
-import os.path
-import os
-
 def highlight(txtin, imgdir):
 	txtout = StringIO.StringIO()
 	p = Parser(txtin,txtout)

@@ -41,14 +41,14 @@ def skl2sikuli(skl, outdir):
 	(p,ext) = os.path.splitext(skl)
 	name = os.path.basename(p)
 	dest = "%s/%s.sikuli" % (outdir, name)
-	cmd = ['unzip',skl,'-d',dest]
+	cmd = ['unzip','-o',skl,'-d',dest]
 	print cmd
 	subprocess.call(cmd)
 	return dest
 
 def import_skl(skl):
-	sikuli = skl2sikuli(skl, ".")
-	create_script(sikuli)
+	sikuli = skl2sikuli(skl, "tmp")
+	return create_script(sikuli)
 
 def create_script(inputdir):
 	'Take a sikuli directory (e.g., apple.sikuli) and get the text of the .py file'
@@ -70,10 +70,10 @@ def create_script(inputdir):
 	os.mkdir(destdir)
 
 	# extract all image references
-	imgrefs = re.findall('[\'\"](.*\.png)[\'\"]',text)
+	imgrefs = re.findall('[\'\"](.*?\.png)[\'\"]',text)
 	
 	for imgref in imgrefs:
-
+		print "> " + imgref
 		imgref_path = "%s/%s" % (inputdir, imgref)
 
 		# check if a referred image can be fond in the dir

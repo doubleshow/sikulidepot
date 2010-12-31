@@ -14,7 +14,10 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # (r'^admin/', include(admin.site.urls)),
+    (r'^$','scripts.views.index'),
     (r'^scripts/', include('scripts.urls')),
+    (r'^(?P<script_id>\d+)/$', 'scripts.views.showsource'),
 )
+
 
 urlpatterns += staticfiles_urlpatterns()
