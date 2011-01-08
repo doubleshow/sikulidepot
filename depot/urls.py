@@ -16,7 +16,8 @@ urlpatterns = patterns('',
     # (r'^admin/', include(admin.site.urls)),
     (r'^$','scripts.views.index'),
     (r'^scripts/', include('scripts.urls')),
-    (r'^(?P<script_id>\d+)/$', 'scripts.views.showsource'),
+#    (r'^(?P<script_id>\d+)/$', 'scripts.views.showsource'),
+    (r'^(?P<script_shorturl>\w+)/$','scripts.views.shorturl'),  
 )
 
 

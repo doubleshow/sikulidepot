@@ -4,9 +4,13 @@
 
 {% for script in latest_script_list %}
 
-<li><a href="/{{script.id}}/">
+<li><a href="/{{script.url}}/">
 {{script.basename}}
-</a></li>
+</a>:
+<a href="/{{script.download_url}}">
+download
+</a>
+</li>
 
 {% endfor %}
 

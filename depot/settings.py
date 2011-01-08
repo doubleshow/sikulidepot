@@ -12,7 +12,8 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'sikulirepo.sqlite3db',                      # Or path to database file if using sqlite3.
+        #'NAME': '/home/ec2-user/sikulidepot/depot/sqlite3db',                      # Or path to database file if using sqlite3.
+	'NAME': '/home/ec2-user/sikulidepot/depot/depot.sqlite3db',
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -58,7 +59,7 @@ MEDIA_URL = ''
 ADMIN_MEDIA_PREFIX = '/media/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '^x8iqter3^a1y9zxe6&o$1uu#wze3h0_9gxu5eb@dlu^ci+@%7'
+SECRET_KEY = '^x8iqter3^a1y9yte6&o$1uu#wze3h0_9gxu5eb@dlu^ci+@%7'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -70,12 +71,12 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+#    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'sikulirepo.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
 	'django.core.context_processors.debug',
@@ -94,9 +95,9 @@ TEMPLATE_DIRS = (
     '/home/ec2-user/sikulidepot/templates'
 )
 
-STATIC_ROOT = "/home/ec2-user/sikulidepot/sikulirepo/static/"
+#STATIC_ROOT = "/home/ec2-user/sikulidepot/depot/static/"
 STATIC_URL = "/static/"
-STATICFILES_DIRS = ("/home/ec2-user/sikulidepot/sikulirepo/static/",)
+#STATICFILES_DIRS = ("/home/ec2-user/sikulidepot/depot/static/",)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
